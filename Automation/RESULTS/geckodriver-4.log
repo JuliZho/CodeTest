@@ -1,0 +1,8 @@
+1632079889849	geckodriver	INFO	Listening on 127.0.0.1:54886
+1632079892908	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\user\\AppData\\Local\\Temp\\rust_mozprofileITGDUj"
+1632079893611	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\user\\AppData\\Local\\Temp\\rust_mozprofileITGDUj\\search.json.mozlz4", (void 0)))
+1632079897115	Marionette	INFO	Listening on port 54895
+1632079897227	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1632079897938	Marionette	INFO	Stopped listening on port 54895
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
