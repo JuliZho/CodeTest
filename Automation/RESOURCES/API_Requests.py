@@ -1,6 +1,4 @@
 
-#from PrepareData import registered_user
-import re
 from openpyxl import Workbook, load_workbook
 import requests
 from requests.models import HTTPBasicAuth
@@ -60,8 +58,6 @@ def get_users_info_status():
     status=str(status[0])
     return status
     
-
-
 users_from_xslx=PrepareData.collect_registered_users_xlsx()
     
 def chceck_users_count_correct():
@@ -73,8 +69,6 @@ def chceck_users_count_correct():
         return true
     else:
         return false
-
-
 
 # get data about the exact user
 def get_info_about_exact_user_data():
@@ -96,7 +90,6 @@ def get_info_about_exact_user_status():
 
 
 # API tests negative scenario
-
 def retrieve_token_data_neg():
     url_response = requests.get(url_get_token, headers={'Content-Type': 'application/json'}, auth=HTTPBasicAuth(username=username_neg,password=password_neg))
     token_json_data_neg=json.loads(url_response.text)
