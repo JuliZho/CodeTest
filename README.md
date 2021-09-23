@@ -1,7 +1,7 @@
-## Demo app and testing ##
+## Flasky app and Test automation
 
 
-## Installation Instructions ##
+### Installation Instructions
 
 
 To run the demo application you need:
