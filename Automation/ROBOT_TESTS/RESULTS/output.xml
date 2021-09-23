@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210922 14:12:16.412" rpa="false" schemaversion="2">
+<suite id="s1" name="Login Registration Test Suite Firefox" source="C:\Users\user\CodeTest\Automation\ROBOT_TESTS\Login_Registration_Test_Suite_Firefox.robot">
+<test id="s1-t1" name="User log in with invalid data">
+<kw name="Begin Web Test" library="Common">
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210922 14:12:17.531" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
+<msg timestamp="20210922 14:12:17.536" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\ROBOT_TESTS\RESULTS\geckodriver-5.log</msg>
+<status status="PASS" starttime="20210922 14:12:17.529" endtime="20210922 14:12:25.064"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>index page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210922 14:12:25.064" endtime="20210922 14:12:25.114"/>
+</kw>
+<status status="PASS" starttime="20210922 14:12:17.527" endtime="20210922 14:12:25.114"/>
+</kw>
+<kw name="Login with not registered data" library="Common">
+<kw name="PrepareData.not_registered_user">
+<msg timestamp="20210922 14:12:25.122" level="FAIL">No keyword with name 'PrepareData.not_registered_user' found.</msg>
+<status status="FAIL" starttime="20210922 14:12:25.122" endtime="20210922 14:12:25.122"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=/html/body/nav/ul/li[2]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:25.132" endtime="20210922 14:12:25.132"/>
+</kw>
+<kw name="PrepareData.new_user_data_username">
+<var>${username}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:25.145" endtime="20210922 14:12:25.145"/>
+</kw>
+<kw name="PrepareData.new_user_data_password">
+<var>${user_password}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:25.154" endtime="20210922 14:12:25.154"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:25.154" endtime="20210922 14:12:25.154"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]</arg>
+<arg>${user_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:25.154" endtime="20210922 14:12:25.154"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=/html/body/section/form/input[3]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:25.154" endtime="20210922 14:12:25.154"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>You provided incorrect login details</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:25.154" endtime="20210922 14:12:25.154"/>
+</kw>
+<status status="FAIL" starttime="20210922 14:12:25.114" endtime="20210922 14:12:25.154"/>
+</kw>
+<kw name="End Test" library="Common">
+<status status="NOT RUN" starttime="20210922 14:12:25.154" endtime="20210922 14:12:25.154"/>
+</kw>
+<status status="FAIL" starttime="20210922 14:12:17.526" endtime="20210922 14:12:25.154">No keyword with name 'PrepareData.not_registered_user' found.</status>
+</test>
+<test id="s1-t2" name="User registration with valid data">
+<kw name="Begin Web Test" library="Common">
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210922 14:12:25.167" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
+<msg timestamp="20210922 14:12:25.169" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\ROBOT_TESTS\RESULTS\geckodriver-6.log</msg>
+<status status="PASS" starttime="20210922 14:12:25.165" endtime="20210922 14:12:32.614"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>index page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210922 14:12:32.614" endtime="20210922 14:12:32.662"/>
+</kw>
+<status status="PASS" starttime="20210922 14:12:25.165" endtime="20210922 14:12:32.662"/>
+</kw>
+<kw name="Register the new user" library="Common">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=/html/body/nav/ul/li[1]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210922 14:12:32.668" level="INFO">Clicking link 'xpath=/html/body/nav/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20210922 14:12:32.667" endtime="20210922 14:12:32.867"/>
+</kw>
+<kw name="PrepareData.new_user_data_username">
+<var>${username}=</var>
+<msg timestamp="20210922 14:12:32.878" level="FAIL">No keyword with name 'PrepareData.new_user_data_username' found.</msg>
+<status status="FAIL" starttime="20210922 14:12:32.878" endtime="20210922 14:12:32.879"/>
+</kw>
+<kw name="PrepareData.new_user_data_password">
+<var>${user_password}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:32.892" endtime="20210922 14:12:32.893"/>
+</kw>
+<kw name="PrepareData.new_user_data_first_name">
+<var>${first_name}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:32.902" endtime="20210922 14:12:32.902"/>
+</kw>
+<kw name="PrepareData.new_user_data_last_name">
+<var>${last_name}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:32.911" endtime="20210922 14:12:32.911"/>
+</kw>
+<kw name="PrepareData.new_user_phone_number">
+<var>${phone_number}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:32.918" endtime="20210922 14:12:32.918"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:32.919" endtime="20210922 14:12:32.919"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]</arg>
+<arg>${user_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:32.919" endtime="20210922 14:12:32.919"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="firstname"]</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:32.919" endtime="20210922 14:12:32.919"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="lastname"]</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:32.920" endtime="20210922 14:12:32.920"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="phone"]</arg>
+<arg>${phone_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:32.920" endtime="20210922 14:12:32.920"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=/html/body/section/form/input[6]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:32.921" endtime="20210922 14:12:32.921"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Log In</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:32.921" endtime="20210922 14:12:32.922"/>
+</kw>
+<status status="FAIL" starttime="20210922 14:12:32.666" endtime="20210922 14:12:32.923"/>
+</kw>
+<kw name="End Test" library="Common">
+<status status="NOT RUN" starttime="20210922 14:12:32.924" endtime="20210922 14:12:32.924"/>
+</kw>
+<doc>Test case tests user registration with new, valid data</doc>
+<status status="FAIL" starttime="20210922 14:12:25.162" endtime="20210922 14:12:32.925">No keyword with name 'PrepareData.new_user_data_username' found.</status>
+</test>
+<test id="s1-t3" name="User log in with valid data">
+<kw name="Begin Web Test" library="Common">
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210922 14:12:32.931" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
+<msg timestamp="20210922 14:12:32.934" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\ROBOT_TESTS\RESULTS\geckodriver-7.log</msg>
+<status status="PASS" starttime="20210922 14:12:32.930" endtime="20210922 14:12:40.495"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>index page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210922 14:12:40.496" endtime="20210922 14:12:40.535"/>
+</kw>
+<status status="PASS" starttime="20210922 14:12:32.929" endtime="20210922 14:12:40.535"/>
+</kw>
+<kw name="Login with new user" library="Common">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=/html/body/nav/ul/li[2]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210922 14:12:40.539" level="INFO">Clicking link 'xpath=/html/body/nav/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20210922 14:12:40.535" endtime="20210922 14:12:40.676"/>
+</kw>
+<kw name="PrepareData.new_user_data_username">
+<var>${username}=</var>
+<msg timestamp="20210922 14:12:40.687" level="FAIL">No keyword with name 'PrepareData.new_user_data_username' found.</msg>
+<status status="FAIL" starttime="20210922 14:12:40.687" endtime="20210922 14:12:40.687"/>
+</kw>
+<kw name="PrepareData.new_user_data_password">
+<var>${user_password}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:40.699" endtime="20210922 14:12:40.699"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:40.699" endtime="20210922 14:12:40.699"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]</arg>
+<arg>${user_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:40.700" endtime="20210922 14:12:40.700"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=/html/body/section/form/input[3]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:40.700" endtime="20210922 14:12:40.700"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>User Information</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:40.701" endtime="20210922 14:12:40.701"/>
+</kw>
+<kw name="PrepareData.add_registered">
+<status status="NOT RUN" starttime="20210922 14:12:40.706" endtime="20210922 14:12:40.706"/>
+</kw>
+<status status="FAIL" starttime="20210922 14:12:40.535" endtime="20210922 14:12:40.708"/>
+</kw>
+<kw name="End Test" library="Common">
+<status status="NOT RUN" starttime="20210922 14:12:40.711" endtime="20210922 14:12:40.711"/>
+</kw>
+<doc>User log in with valid data</doc>
+<status status="FAIL" starttime="20210922 14:12:32.927" endtime="20210922 14:12:40.712">No keyword with name 'PrepareData.new_user_data_username' found.</status>
+</test>
+<test id="s1-t4" name="User registration with invalid data">
+<kw name="Begin Web Test" library="Common">
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210922 14:12:40.720" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
+<msg timestamp="20210922 14:12:40.726" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\ROBOT_TESTS\RESULTS\geckodriver-8.log</msg>
+<status status="PASS" starttime="20210922 14:12:40.718" endtime="20210922 14:12:48.673"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>index page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210922 14:12:48.673" endtime="20210922 14:12:48.704"/>
+</kw>
+<status status="PASS" starttime="20210922 14:12:40.717" endtime="20210922 14:12:48.704"/>
+</kw>
+<kw name="Register with existing username" library="Common">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=/html/body/nav/ul/li[1]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210922 14:12:48.717" level="INFO">Clicking link 'xpath=/html/body/nav/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20210922 14:12:48.717" endtime="20210922 14:12:48.843"/>
+</kw>
+<kw name="PrepareData.registered_user">
+<msg timestamp="20210922 14:12:48.843" level="FAIL">No keyword with name 'PrepareData.registered_user' found.</msg>
+<status status="FAIL" starttime="20210922 14:12:48.843" endtime="20210922 14:12:48.843"/>
+</kw>
+<kw name="PrepareData.registered_username">
+<var>${username}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:48.858" endtime="20210922 14:12:48.858"/>
+</kw>
+<kw name="PrepareData.user_password">
+<var>${user_password}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:48.874" endtime="20210922 14:12:48.874"/>
+</kw>
+<kw name="PrepareData.registered_first_name">
+<var>${first_name}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:48.874" endtime="20210922 14:12:48.874"/>
+</kw>
+<kw name="PrepareData.registered_last_name">
+<var>${last_name}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:48.890" endtime="20210922 14:12:48.890"/>
+</kw>
+<kw name="PrepareData.registered_phone_number">
+<var>${phone_number}=</var>
+<status status="NOT RUN" starttime="20210922 14:12:48.890" endtime="20210922 14:12:48.890"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:48.890" endtime="20210922 14:12:48.905"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]</arg>
+<arg>${user_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:48.905" endtime="20210922 14:12:48.905"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="firstname"]</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:48.905" endtime="20210922 14:12:48.905"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="lastname"]</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:48.905" endtime="20210922 14:12:48.905"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="phone"]</arg>
+<arg>${phone_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:48.905" endtime="20210922 14:12:48.905"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=/html/body/section/form/input[6]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:48.905" endtime="20210922 14:12:48.905"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>User ${username} is already registered.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20210922 14:12:48.905" endtime="20210922 14:12:48.905"/>
+</kw>
+<status status="FAIL" starttime="20210922 14:12:48.704" endtime="20210922 14:12:48.905"/>
+</kw>
+<kw name="End Test" library="Common">
+<status status="NOT RUN" starttime="20210922 14:12:48.905" endtime="20210922 14:12:48.905"/>
+</kw>
+<doc>User registration with existing data in the system</doc>
+<status status="FAIL" starttime="20210922 14:12:40.716" endtime="20210922 14:12:48.913">No keyword with name 'PrepareData.registered_user' found.</status>
+</test>
+<doc>Test Suite: Registration and log in with valid and invalid data</doc>
+<status status="FAIL" starttime="20210922 14:12:16.412" endtime="20210922 14:12:48.916"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="4" skip="0" id="s1" name="Login Registration Test Suite Firefox">Login Registration Test Suite Firefox</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210922 14:12:17.518" level="ERROR">Error in file 'C:\Users\user\CodeTest\Automation\RESOURCES\Common.robot' on line 3: Importing library 'C:\Users\user\CodeTest\Automation\RESOURCES\PrepareData.py' failed: FileNotFoundError: [Errno 2] No such file or directory: 'Automation/RESOURCES/TestData.xlsx'
+Traceback (most recent call last):
+  File "C:\Users\user\CodeTest\Automation\RESOURCES\PrepareData.py", line 8, in &lt;module&gt;
+    wb = load_workbook(filename="Automation/RESOURCES/TestData.xlsx")
+  File "C:\Users\user\AppData\Local\Programs\Python\Python39\lib\site-packages\openpyxl\reader\excel.py", line 320, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+  File "C:\Users\user\AppData\Local\Programs\Python\Python39\lib\site-packages\openpyxl\reader\excel.py", line 126, in __init__
+    self.archive = _validate_archive(fn)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python39\lib\site-packages\openpyxl\reader\excel.py", line 98, in _validate_archive
+    archive = ZipFile(filename, 'r')
+  File "C:\Users\user\AppData\Local\Programs\Python\Python39\lib\zipfile.py", line 1239, in __init__
+    self.fp = io.open(file, filemode)
+PYTHONPATH:
+  C:\Users\user\AppData\Local\Programs\Python\Python39\Scripts\robot.exe
+  C:\Users\user\AppData\Local\Programs\Python\Python39\python39.zip
+  C:\Users\user\AppData\Local\Programs\Python\Python39\DLLs
+  C:\Users\user\AppData\Local\Programs\Python\Python39\lib
+  C:\Users\user\AppData\Local\Programs\Python\Python39
+  C:\Users\user\AppData\Local\Programs\Python\Python39\lib\site-packages</msg>
+</errors>
+</robot>
