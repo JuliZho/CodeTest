@@ -1,29 +1,25 @@
 ## Flasky app and Test automation
 
 
-### Installation Instructions
-
-
-To run the demo application you need:
+### Needed Instalations:
 
 * install Python 3.9 and SQLite3
 * pip3.9 install flask
 * pip3.9 install robotframework-seleniumlibrary
 
-## Run the Flasky app  ##
-connect to the internet
-go to Flasky folder
+### To run Flasky app follow the below
+* connect to the internet
+* go to /CodeTest/flasky
+#### Execute commands 
+* set FLASK_APP=demo_app
+* env/Scripts/activate.bat
+*  ./run.sh
 
-## Execute commands ##
-set FLASK_APP=demo_app
-env/Scripts/activate.bat
-run run.sh file 
-
-
-## Automation folder contains ##
+### Automation folder contains
 
 RESOURSES folder 
-   common.robot    - keywords. Libraries: SeleniumLibrary, PrepareData.py, BuiltIn
+   UI_Common.robot    - keywords. Libraries: SeleniumLibrary, PrepareData.py, BuiltIn
+   API_Common.robot    
    PrepareData.py  - extracting test data from xlsx file. Libraries: faker, openpyxl
    TestData.xlsx   - file with test data
    
@@ -36,9 +32,20 @@ TEST_DATA_SCRIPTS
 TESTS   
    Login_Registration_Test_Suite_Firefox.robot  - robot test cases for UI.
    
+### Test Case Execution
+####To execute the Login_Registration_Test_Suite_Firefox.robot file follow the below steps
+ go to /CodeTest/Automation
+#### Execute command
+ robot -d RESULTS\UI .\ROBOT_TESTS\Login_Registration_Test_Suite_Firefox.robot
+###To run the API.robot stay in the same folder and execute
+ robot -d RESULTS\API .\ROBOT_TESTS\API.robot
+#### Test Results
+* API tests:  /Automation/RESULTS/API
+* UI tests:  /Automation/RESULTS/UI
 
-##To execute the  test file go to TEST directory and run##
-    robot -d RESULTS .\TESTS\Login_Registration_Test_Suite_Firefox.robot
+ 
+ 
+
 
 
 

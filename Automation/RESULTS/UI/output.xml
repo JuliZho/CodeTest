@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210924 00:42:49.759" rpa="false" schemaversion="2">
+<suite id="s1" name="Login Registration Test Suite Firefox" source="C:\Users\user\CodeTest\Automation\ROBOT_TESTS\Login_Registration_Test_Suite_Firefox.robot">
+<test id="s1-t1" name="User log in with invalid data">
+<kw name="Begin Web Test" library="UI_Common">
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210924 00:42:50.893" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
+<msg timestamp="20210924 00:42:50.906" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\RESULTS\UI\geckodriver-1.log</msg>
+<status status="PASS" starttime="20210924 00:42:50.892" endtime="20210924 00:42:58.678"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>index page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210924 00:42:58.680" endtime="20210924 00:42:58.761"/>
+</kw>
+<status status="PASS" starttime="20210924 00:42:50.892" endtime="20210924 00:42:58.761"/>
+</kw>
+<kw name="Login with not registered data" library="UI_Common">
+<kw name="Not Registered User" library="PrepareData">
+<status status="PASS" starttime="20210924 00:42:58.770" endtime="20210924 00:42:58.770"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=/html/body/nav/ul/li[2]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210924 00:42:58.772" level="INFO">Clicking link 'xpath=/html/body/nav/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20210924 00:42:58.771" endtime="20210924 00:42:59.048"/>
+</kw>
+<kw name="New User Data Username" library="PrepareData">
+<var>${username}</var>
+<msg timestamp="20210924 00:42:59.048" level="INFO">${username} = CbGOdq816</msg>
+<status status="PASS" starttime="20210924 00:42:59.048" endtime="20210924 00:42:59.048"/>
+</kw>
+<kw name="New User Data Password" library="PrepareData">
+<var>${user_password}</var>
+<msg timestamp="20210924 00:42:59.049" level="INFO">${user_password} = go2R3K8w3d1</msg>
+<status status="PASS" starttime="20210924 00:42:59.048" endtime="20210924 00:42:59.049"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:42:59.049" level="INFO">Typing text 'CbGOdq816' into text field 'xpath=//*[@id="username"]'.</msg>
+<status status="PASS" starttime="20210924 00:42:59.049" endtime="20210924 00:42:59.070"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]</arg>
+<arg>${user_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:42:59.086" level="INFO">Typing text 'go2R3K8w3d1' into text field 'xpath=//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20210924 00:42:59.086" endtime="20210924 00:42:59.102"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=/html/body/section/form/input[3]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210924 00:42:59.102" level="INFO">Clicking button 'xpath=/html/body/section/form/input[3]'.</msg>
+<status status="PASS" starttime="20210924 00:42:59.102" endtime="20210924 00:42:59.198"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>You provided incorrect login details</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210924 00:42:59.198" endtime="20210924 00:42:59.198"/>
+</kw>
+<status status="PASS" starttime="20210924 00:42:58.761" endtime="20210924 00:42:59.198"/>
+</kw>
+<kw name="End Test" library="UI_Common">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210924 00:42:59.214" endtime="20210924 00:42:59.999"/>
+</kw>
+<status status="PASS" starttime="20210924 00:42:59.214" endtime="20210924 00:42:59.999"/>
+</kw>
+<status status="PASS" starttime="20210924 00:42:50.890" endtime="20210924 00:42:59.999"/>
+</test>
+<test id="s1-t2" name="User registration with valid data">
+<kw name="Begin Web Test" library="UI_Common">
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210924 00:43:00.008" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
+<msg timestamp="20210924 00:43:00.009" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\RESULTS\UI\geckodriver-2.log</msg>
+<status status="PASS" starttime="20210924 00:43:00.007" endtime="20210924 00:43:07.369"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>index page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210924 00:43:07.369" endtime="20210924 00:43:07.407"/>
+</kw>
+<status status="PASS" starttime="20210924 00:43:00.006" endtime="20210924 00:43:07.407"/>
+</kw>
+<kw name="Register the new user" library="UI_Common">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=/html/body/nav/ul/li[1]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:07.415" level="INFO">Clicking link 'xpath=/html/body/nav/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20210924 00:43:07.407" endtime="20210924 00:43:07.554"/>
+</kw>
+<kw name="New User Data Username" library="PrepareData">
+<var>${username}</var>
+<msg timestamp="20210924 00:43:07.554" level="INFO">${username} = CbGOdq816</msg>
+<status status="PASS" starttime="20210924 00:43:07.554" endtime="20210924 00:43:07.554"/>
+</kw>
+<kw name="New User Data Password" library="PrepareData">
+<var>${user_password}</var>
+<msg timestamp="20210924 00:43:07.554" level="INFO">${user_password} = go2R3K8w3d1</msg>
+<status status="PASS" starttime="20210924 00:43:07.554" endtime="20210924 00:43:07.554"/>
+</kw>
+<kw name="New User Data First Name" library="PrepareData">
+<var>${first_name}</var>
+<msg timestamp="20210924 00:43:07.554" level="INFO">${first_name} = Jessica</msg>
+<status status="PASS" starttime="20210924 00:43:07.554" endtime="20210924 00:43:07.554"/>
+</kw>
+<kw name="New User Data Last Name" library="PrepareData">
+<var>${last_name}</var>
+<msg timestamp="20210924 00:43:07.554" level="INFO">${last_name} = Barton</msg>
+<status status="PASS" starttime="20210924 00:43:07.554" endtime="20210924 00:43:07.554"/>
+</kw>
+<kw name="New User Phone Number" library="PrepareData">
+<var>${phone_number}</var>
+<msg timestamp="20210924 00:43:07.554" level="INFO">${phone_number} = +358 749069740</msg>
+<status status="PASS" starttime="20210924 00:43:07.554" endtime="20210924 00:43:07.554"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:07.554" level="INFO">Typing text 'CbGOdq816' into text field 'xpath=//*[@id="username"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:07.554" endtime="20210924 00:43:07.624"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]</arg>
+<arg>${user_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:07.625" level="INFO">Typing text 'go2R3K8w3d1' into text field 'xpath=//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:07.625" endtime="20210924 00:43:07.645"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="firstname"]</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:07.645" level="INFO">Typing text 'Jessica' into text field 'xpath=//*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:07.645" endtime="20210924 00:43:07.696"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="lastname"]</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:07.698" level="INFO">Typing text 'Barton' into text field 'xpath=//*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:07.697" endtime="20210924 00:43:07.747"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="phone"]</arg>
+<arg>${phone_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:07.750" level="INFO">Typing text '+358 749069740' into text field 'xpath=//*[@id="phone"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:07.747" endtime="20210924 00:43:07.810"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=/html/body/section/form/input[6]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:07.811" level="INFO">Clicking button 'xpath=/html/body/section/form/input[6]'.</msg>
+<status status="PASS" starttime="20210924 00:43:07.810" endtime="20210924 00:43:08.279"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Log In</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210924 00:43:08.279" endtime="20210924 00:43:08.294"/>
+</kw>
+<status status="PASS" starttime="20210924 00:43:07.407" endtime="20210924 00:43:08.294"/>
+</kw>
+<kw name="End Test" library="UI_Common">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210924 00:43:08.294" endtime="20210924 00:43:09.316"/>
+</kw>
+<status status="PASS" starttime="20210924 00:43:08.294" endtime="20210924 00:43:09.316"/>
+</kw>
+<doc>Test case tests user registration with new, valid data</doc>
+<status status="PASS" starttime="20210924 00:43:00.004" endtime="20210924 00:43:09.316"/>
+</test>
+<test id="s1-t3" name="User log in with valid data">
+<kw name="Begin Web Test" library="UI_Common">
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210924 00:43:09.327" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
+<msg timestamp="20210924 00:43:09.329" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\RESULTS\UI\geckodriver-3.log</msg>
+<status status="PASS" starttime="20210924 00:43:09.326" endtime="20210924 00:43:16.720"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>index page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210924 00:43:16.721" endtime="20210924 00:43:16.772"/>
+</kw>
+<status status="PASS" starttime="20210924 00:43:09.325" endtime="20210924 00:43:16.773"/>
+</kw>
+<kw name="Login with new user" library="UI_Common">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=/html/body/nav/ul/li[2]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:16.776" level="INFO">Clicking link 'xpath=/html/body/nav/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20210924 00:43:16.776" endtime="20210924 00:43:16.902"/>
+</kw>
+<kw name="New User Data Username" library="PrepareData">
+<var>${username}</var>
+<msg timestamp="20210924 00:43:16.903" level="INFO">${username} = CbGOdq816</msg>
+<status status="PASS" starttime="20210924 00:43:16.902" endtime="20210924 00:43:16.903"/>
+</kw>
+<kw name="New User Data Password" library="PrepareData">
+<var>${user_password}</var>
+<msg timestamp="20210924 00:43:16.904" level="INFO">${user_password} = go2R3K8w3d1</msg>
+<status status="PASS" starttime="20210924 00:43:16.903" endtime="20210924 00:43:16.904"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:16.905" level="INFO">Typing text 'CbGOdq816' into text field 'xpath=//*[@id="username"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:16.904" endtime="20210924 00:43:16.952"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]</arg>
+<arg>${user_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:16.952" level="INFO">Typing text 'go2R3K8w3d1' into text field 'xpath=//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:16.952" endtime="20210924 00:43:16.983"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=/html/body/section/form/input[3]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:16.983" level="INFO">Clicking button 'xpath=/html/body/section/form/input[3]'.</msg>
+<status status="PASS" starttime="20210924 00:43:16.983" endtime="20210924 00:43:17.385"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>User Information</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210924 00:43:17.385" endtime="20210924 00:43:17.385"/>
+</kw>
+<kw name="Add Registered" library="PrepareData">
+<status status="PASS" starttime="20210924 00:43:17.385" endtime="20210924 00:43:17.436"/>
+</kw>
+<status status="PASS" starttime="20210924 00:43:16.775" endtime="20210924 00:43:17.436"/>
+</kw>
+<kw name="End Test" library="UI_Common">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210924 00:43:17.436" endtime="20210924 00:43:18.332"/>
+</kw>
+<status status="PASS" starttime="20210924 00:43:17.436" endtime="20210924 00:43:18.333"/>
+</kw>
+<doc>User log in with valid data</doc>
+<status status="PASS" starttime="20210924 00:43:09.323" endtime="20210924 00:43:18.334"/>
+</test>
+<test id="s1-t4" name="User registration with invalid data">
+<kw name="Begin Web Test" library="UI_Common">
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210924 00:43:18.340" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
+<msg timestamp="20210924 00:43:18.341" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\RESULTS\UI\geckodriver-4.log</msg>
+<status status="PASS" starttime="20210924 00:43:18.339" endtime="20210924 00:43:25.711"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>index page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210924 00:43:25.711" endtime="20210924 00:43:25.736"/>
+</kw>
+<status status="PASS" starttime="20210924 00:43:18.338" endtime="20210924 00:43:25.736"/>
+</kw>
+<kw name="Register with existing username" library="UI_Common">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=/html/body/nav/ul/li[1]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:25.739" level="INFO">Clicking link 'xpath=/html/body/nav/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20210924 00:43:25.739" endtime="20210924 00:43:25.841"/>
+</kw>
+<kw name="Registered User" library="PrepareData">
+<status status="PASS" starttime="20210924 00:43:25.841" endtime="20210924 00:43:25.841"/>
+</kw>
+<kw name="Registered Username" library="PrepareData">
+<var>${username}</var>
+<msg timestamp="20210924 00:43:25.841" level="INFO">${username} = FQnBDZ502</msg>
+<status status="PASS" starttime="20210924 00:43:25.841" endtime="20210924 00:43:25.841"/>
+</kw>
+<kw name="User Password" library="PrepareData">
+<var>${user_password}</var>
+<msg timestamp="20210924 00:43:25.857" level="INFO">${user_password} = gp6d8n3q0q1</msg>
+<status status="PASS" starttime="20210924 00:43:25.841" endtime="20210924 00:43:25.857"/>
+</kw>
+<kw name="Registered First Name" library="PrepareData">
+<var>${first_name}</var>
+<msg timestamp="20210924 00:43:25.857" level="INFO">${first_name} = David</msg>
+<status status="PASS" starttime="20210924 00:43:25.857" endtime="20210924 00:43:25.857"/>
+</kw>
+<kw name="Registered Last Name" library="PrepareData">
+<var>${last_name}</var>
+<msg timestamp="20210924 00:43:25.857" level="INFO">${last_name} = Pierce</msg>
+<status status="PASS" starttime="20210924 00:43:25.857" endtime="20210924 00:43:25.857"/>
+</kw>
+<kw name="Registered Phone Number" library="PrepareData">
+<var>${phone_number}</var>
+<msg timestamp="20210924 00:43:25.857" level="INFO">${phone_number} = +358 498976158</msg>
+<status status="PASS" starttime="20210924 00:43:25.857" endtime="20210924 00:43:25.857"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:25.857" level="INFO">Typing text 'FQnBDZ502' into text field 'xpath=//*[@id="username"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:25.857" endtime="20210924 00:43:25.895"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]</arg>
+<arg>${user_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:25.895" level="INFO">Typing text 'gp6d8n3q0q1' into text field 'xpath=//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:25.895" endtime="20210924 00:43:25.914"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="firstname"]</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:25.914" level="INFO">Typing text 'David' into text field 'xpath=//*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:25.914" endtime="20210924 00:43:25.945"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="lastname"]</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:25.945" level="INFO">Typing text 'Pierce' into text field 'xpath=//*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:25.945" endtime="20210924 00:43:25.976"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="phone"]</arg>
+<arg>${phone_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:25.976" level="INFO">Typing text '+358 498976158' into text field 'xpath=//*[@id="phone"]'.</msg>
+<status status="PASS" starttime="20210924 00:43:25.976" endtime="20210924 00:43:25.995"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=/html/body/section/form/input[6]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210924 00:43:25.995" level="INFO">Clicking button 'xpath=/html/body/section/form/input[6]'.</msg>
+<status status="PASS" starttime="20210924 00:43:25.995" endtime="20210924 00:43:26.088"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>User ${username} is already registered.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210924 00:43:26.088" endtime="20210924 00:43:26.095"/>
+</kw>
+<status status="PASS" starttime="20210924 00:43:25.736" endtime="20210924 00:43:26.095"/>
+</kw>
+<kw name="End Test" library="UI_Common">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210924 00:43:26.095" endtime="20210924 00:43:27.013"/>
+</kw>
+<status status="PASS" starttime="20210924 00:43:26.095" endtime="20210924 00:43:27.013"/>
+</kw>
+<doc>User registration with existing data in the system</doc>
+<status status="PASS" starttime="20210924 00:43:18.336" endtime="20210924 00:43:27.014"/>
+</test>
+<doc>Test Suite: Registration and log in with valid and invalid data</doc>
+<status status="PASS" starttime="20210924 00:42:49.759" endtime="20210924 00:43:27.017"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Login Registration Test Suite Firefox">Login Registration Test Suite Firefox</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
