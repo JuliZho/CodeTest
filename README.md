@@ -6,11 +6,9 @@
 
 To run the demo application you need:
 
-install Python 3.9 and SQLite3
-pip3.9 install flask
-pip3.9 install robotframework-seleniumlibrary
-
-
+* install Python 3.9 and SQLite3
+* pip3.9 install flask
+* pip3.9 install robotframework-seleniumlibrary
 
 ## Run the Flasky app  ##
 connect to the internet
