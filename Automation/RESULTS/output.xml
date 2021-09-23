@@ -1,385 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210919 22:30:58.428" rpa="false" schemaversion="2">
-<suite id="s1" name="Login Registration Test Suite Firefox" source="C:\Users\user\CodeTest\Automation\TESTS\Login_Registration_Test_Suite_Firefox.robot">
-<test id="s1-t1" name="User log in with invalid data">
-<kw name="Begin Web Test" library="common">
-<arg>${BROWSER}</arg>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210919 22:31:00.261" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
-<msg timestamp="20210919 22:31:00.270" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\RESULTS\geckodriver-1.log</msg>
-<status status="PASS" starttime="20210919 22:31:00.260" endtime="20210919 22:31:08.708"/>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210924 00:01:53.787" rpa="false" schemaversion="2">
+<suite id="s1" name="API" source="C:\Users\user\CodeTest\Automation\ROBOT_TESTS\API.robot">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>Started testing</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210924 00:01:55.558" endtime="20210924 00:01:55.559"/>
 </kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>index page</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210919 22:31:08.708" endtime="20210919 22:31:08.745"/>
+<test id="s1-t1" name="GET Receive personall data about exact user - success">
+<kw name="Receive data exact user" library="API_Common">
+<kw name="Get Info About Exact User Payload" library="API_Requests">
+<var>${user_data}</var>
+<msg timestamp="20210924 00:01:55.562" level="INFO">${user_data} = [{'firstname': 'William', 'lastname': 'Watkins', 'phone': '+358 010879460'}]</msg>
+<status status="PASS" starttime="20210924 00:01:55.562" endtime="20210924 00:01:55.562"/>
 </kw>
-<status status="PASS" starttime="20210919 22:31:00.259" endtime="20210919 22:31:08.745"/>
+<kw name="Get Info About Exact User Status" library="API_Requests">
+<var>${status_eu}</var>
+<msg timestamp="20210924 00:01:55.562" level="INFO">${status_eu} = SUCCESS</msg>
+<status status="PASS" starttime="20210924 00:01:55.562" endtime="20210924 00:01:55.562"/>
 </kw>
-<kw name="Login with not registered data" library="common">
-<kw name="Not Registered User" library="PrepareData">
-<status status="PASS" starttime="20210919 22:31:08.745" endtime="20210919 22:31:08.745"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status_eu}</arg>
+<arg>${result_success}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 00:01:55.563" endtime="20210924 00:01:55.563"/>
 </kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>xpath=/html/body/nav/ul/li[2]/a</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:08.759" level="INFO">Clicking link 'xpath=/html/body/nav/ul/li[2]/a'.</msg>
-<status status="PASS" starttime="20210919 22:31:08.759" endtime="20210919 22:31:08.877"/>
+<status status="PASS" starttime="20210924 00:01:55.561" endtime="20210924 00:01:55.563"/>
 </kw>
-<kw name="New User Data Username" library="PrepareData">
-<var>${username}</var>
-<msg timestamp="20210919 22:31:08.877" level="INFO">${username} = XZHuVX055</msg>
-<status status="PASS" starttime="20210919 22:31:08.877" endtime="20210919 22:31:08.877"/>
-</kw>
-<kw name="New User Data Password" library="PrepareData">
-<var>${user_password}</var>
-<msg timestamp="20210919 22:31:08.892" level="INFO">${user_password} = sD8c3h3f6s2</msg>
-<status status="PASS" starttime="20210919 22:31:08.877" endtime="20210919 22:31:08.892"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="username"]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:08.892" level="INFO">Typing text 'XZHuVX055' into text field 'xpath=//*[@id="username"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:08.892" endtime="20210919 22:31:08.946"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="password"]</arg>
-<arg>${user_password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:08.946" level="INFO">Typing text 'sD8c3h3f6s2' into text field 'xpath=//*[@id="password"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:08.946" endtime="20210919 22:31:08.993"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>xpath=/html/body/section/form/input[3]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:08.993" level="INFO">Clicking button 'xpath=/html/body/section/form/input[3]'.</msg>
-<status status="PASS" starttime="20210919 22:31:08.993" endtime="20210919 22:31:09.131"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>You provided incorrect login details</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210919 22:31:09.131" endtime="20210919 22:31:09.131"/>
-</kw>
-<status status="PASS" starttime="20210919 22:31:08.745" endtime="20210919 22:31:09.131"/>
-</kw>
-<kw name="End Test" library="common">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210919 22:31:09.131" endtime="20210919 22:31:10.377"/>
-</kw>
-<status status="PASS" starttime="20210919 22:31:09.131" endtime="20210919 22:31:10.377"/>
-</kw>
-<status status="PASS" starttime="20210919 22:31:00.258" endtime="20210919 22:31:10.378"/>
+<status status="PASS" starttime="20210924 00:01:55.560" endtime="20210924 00:01:55.564"/>
 </test>
-<test id="s1-t2" name="User registration with valid data">
-<kw name="Begin Web Test" library="common">
-<arg>${BROWSER}</arg>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210919 22:31:10.383" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
-<msg timestamp="20210919 22:31:10.384" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\RESULTS\geckodriver-2.log</msg>
-<status status="PASS" starttime="20210919 22:31:10.382" endtime="20210919 22:31:17.780"/>
+<test id="s1-t2" name="GET Receive the token - success">
+<kw name="Receive Token Success" library="API_Common">
+<kw name="Rettrive Token Status" library="API_Requests">
+<var>${status_ts}</var>
+<msg timestamp="20210924 00:01:55.573" level="INFO">${status_ts} = SUCCESS</msg>
+<status status="PASS" starttime="20210924 00:01:55.572" endtime="20210924 00:01:55.573"/>
 </kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>index page</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210919 22:31:17.780" endtime="20210919 22:31:17.815"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status_ts}</arg>
+<arg>${result_success}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 00:01:55.573" endtime="20210924 00:01:55.573"/>
 </kw>
-<status status="PASS" starttime="20210919 22:31:10.381" endtime="20210919 22:31:17.815"/>
+<kw name="Rettrive Token Message" library="API_Requests">
+<var>${message_ts}</var>
+<msg timestamp="20210924 00:01:55.574" level="INFO">${message_ts} = False</msg>
+<status status="PASS" starttime="20210924 00:01:55.573" endtime="20210924 00:01:55.574"/>
 </kw>
-<kw name="Register the new user" library="common">
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>xpath=/html/body/nav/ul/li[1]/a</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:17.817" level="INFO">Clicking link 'xpath=/html/body/nav/ul/li[1]/a'.</msg>
-<status status="PASS" starttime="20210919 22:31:17.817" endtime="20210919 22:31:17.986"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${message_ts}</arg>
+<arg>${string_false}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 00:01:55.574" endtime="20210924 00:01:55.577"/>
 </kw>
-<kw name="New User Data Username" library="PrepareData">
-<var>${username}</var>
-<msg timestamp="20210919 22:31:17.986" level="INFO">${username} = XZHuVX055</msg>
-<status status="PASS" starttime="20210919 22:31:17.986" endtime="20210919 22:31:17.986"/>
+<status status="PASS" starttime="20210924 00:01:55.572" endtime="20210924 00:01:55.577"/>
 </kw>
-<kw name="New User Data Password" library="PrepareData">
-<var>${user_password}</var>
-<msg timestamp="20210919 22:31:17.986" level="INFO">${user_password} = sD8c3h3f6s2</msg>
-<status status="PASS" starttime="20210919 22:31:17.986" endtime="20210919 22:31:17.986"/>
-</kw>
-<kw name="New User Data First Name" library="PrepareData">
-<var>${first_name}</var>
-<msg timestamp="20210919 22:31:17.986" level="INFO">${first_name} = Sean</msg>
-<status status="PASS" starttime="20210919 22:31:17.986" endtime="20210919 22:31:17.986"/>
-</kw>
-<kw name="New User Data Last Name" library="PrepareData">
-<var>${last_name}</var>
-<msg timestamp="20210919 22:31:17.986" level="INFO">${last_name} = Wolfe</msg>
-<status status="PASS" starttime="20210919 22:31:17.986" endtime="20210919 22:31:17.986"/>
-</kw>
-<kw name="New User Phone Number" library="PrepareData">
-<var>${phone_number}</var>
-<msg timestamp="20210919 22:31:17.986" level="INFO">${phone_number} = 077 237 3586</msg>
-<status status="PASS" starttime="20210919 22:31:17.986" endtime="20210919 22:31:17.986"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="username"]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:17.986" level="INFO">Typing text 'XZHuVX055' into text field 'xpath=//*[@id="username"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:17.986" endtime="20210919 22:31:18.045"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="password"]</arg>
-<arg>${user_password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:18.045" level="INFO">Typing text 'sD8c3h3f6s2' into text field 'xpath=//*[@id="password"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:18.045" endtime="20210919 22:31:18.092"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="firstname"]</arg>
-<arg>${first_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:18.092" level="INFO">Typing text 'Sean' into text field 'xpath=//*[@id="firstname"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:18.092" endtime="20210919 22:31:18.136"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="lastname"]</arg>
-<arg>${last_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:18.136" level="INFO">Typing text 'Wolfe' into text field 'xpath=//*[@id="lastname"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:18.136" endtime="20210919 22:31:18.185"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="phone"]</arg>
-<arg>${phone_number}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:18.187" level="INFO">Typing text '077 237 3586' into text field 'xpath=//*[@id="phone"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:18.185" endtime="20210919 22:31:18.217"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>xpath=/html/body/section/form/input[6]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:18.217" level="INFO">Clicking button 'xpath=/html/body/section/form/input[6]'.</msg>
-<status status="PASS" starttime="20210919 22:31:18.217" endtime="20210919 22:31:18.594"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Log In</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210919 22:31:18.594" endtime="20210919 22:31:18.609"/>
-</kw>
-<status status="PASS" starttime="20210919 22:31:17.816" endtime="20210919 22:31:18.609"/>
-</kw>
-<kw name="End Test" library="common">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210919 22:31:18.625" endtime="20210919 22:31:19.941"/>
-</kw>
-<status status="PASS" starttime="20210919 22:31:18.625" endtime="20210919 22:31:19.942"/>
-</kw>
-<doc>Test case tests user registration with new, valid data</doc>
-<status status="PASS" starttime="20210919 22:31:10.380" endtime="20210919 22:31:19.942"/>
+<status status="PASS" starttime="20210924 00:01:55.571" endtime="20210924 00:01:55.578"/>
 </test>
-<test id="s1-t3" name="User log in with valid data">
-<kw name="Begin Web Test" library="common">
-<arg>${BROWSER}</arg>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210919 22:31:19.948" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
-<msg timestamp="20210919 22:31:19.948" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\RESULTS\geckodriver-3.log</msg>
-<status status="PASS" starttime="20210919 22:31:19.948" endtime="20210919 22:31:27.360"/>
+<test id="s1-t3" name="GET Receive the token - failure">
+<kw name="Receive Token Failure" library="API_Common">
+<kw name="Retrieve Token Neg Status" library="API_Requests">
+<var>${status_tf}</var>
+<msg timestamp="20210924 00:01:55.586" level="INFO">${status_tf} = FAILURE</msg>
+<status status="PASS" starttime="20210924 00:01:55.584" endtime="20210924 00:01:55.586"/>
 </kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>index page</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210919 22:31:27.360" endtime="20210919 22:31:27.408"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status_tf}</arg>
+<arg>${result_failed}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 00:01:55.587" endtime="20210924 00:01:55.587"/>
 </kw>
-<status status="PASS" starttime="20210919 22:31:19.948" endtime="20210919 22:31:27.408"/>
+<kw name="Retrieve Token Neg Message" library="API_Requests">
+<var>${message_tf}</var>
+<msg timestamp="20210924 00:01:55.588" level="INFO">${message_tf} = Invalid User</msg>
+<status status="PASS" starttime="20210924 00:01:55.587" endtime="20210924 00:01:55.588"/>
 </kw>
-<kw name="Login with new user" library="common">
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>xpath=/html/body/nav/ul/li[2]/a</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:27.410" level="INFO">Clicking link 'xpath=/html/body/nav/ul/li[2]/a'.</msg>
-<status status="PASS" starttime="20210919 22:31:27.410" endtime="20210919 22:31:27.560"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${message_tf}</arg>
+<arg>${invalid_user}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 00:01:55.588" endtime="20210924 00:01:55.588"/>
 </kw>
-<kw name="New User Data Username" library="PrepareData">
-<var>${username}</var>
-<msg timestamp="20210919 22:31:27.562" level="INFO">${username} = XZHuVX055</msg>
-<status status="PASS" starttime="20210919 22:31:27.560" endtime="20210919 22:31:27.562"/>
+<status status="PASS" starttime="20210924 00:01:55.582" endtime="20210924 00:01:55.588"/>
 </kw>
-<kw name="New User Data Password" library="PrepareData">
-<var>${user_password}</var>
-<msg timestamp="20210919 22:31:27.562" level="INFO">${user_password} = sD8c3h3f6s2</msg>
-<status status="PASS" starttime="20210919 22:31:27.562" endtime="20210919 22:31:27.562"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="username"]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:27.562" level="INFO">Typing text 'XZHuVX055' into text field 'xpath=//*[@id="username"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:27.562" endtime="20210919 22:31:27.663"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="password"]</arg>
-<arg>${user_password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:27.663" level="INFO">Typing text 'sD8c3h3f6s2' into text field 'xpath=//*[@id="password"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:27.663" endtime="20210919 22:31:27.714"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>xpath=/html/body/section/form/input[3]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:27.714" level="INFO">Clicking button 'xpath=/html/body/section/form/input[3]'.</msg>
-<status status="PASS" starttime="20210919 22:31:27.714" endtime="20210919 22:31:28.253"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>User Information</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210919 22:31:28.253" endtime="20210919 22:31:28.268"/>
-</kw>
-<kw name="Add Registered" library="PrepareData">
-<status status="PASS" starttime="20210919 22:31:28.268" endtime="20210919 22:31:28.337"/>
-</kw>
-<status status="PASS" starttime="20210919 22:31:27.410" endtime="20210919 22:31:28.337"/>
-</kw>
-<kw name="End Test" library="common">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210919 22:31:28.337" endtime="20210919 22:31:29.816"/>
-</kw>
-<status status="PASS" starttime="20210919 22:31:28.337" endtime="20210919 22:31:29.816"/>
-</kw>
-<doc>User log in with valid data</doc>
-<status status="PASS" starttime="20210919 22:31:19.946" endtime="20210919 22:31:29.816"/>
+<status status="PASS" starttime="20210924 00:01:55.581" endtime="20210924 00:01:55.589"/>
 </test>
-<test id="s1-t4" name="User registration with invalid data">
-<kw name="Begin Web Test" library="common">
-<arg>${BROWSER}</arg>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210919 22:31:29.829" level="INFO">Opening browser 'firefox' to base url 'http://192.168.43.214:8080'.</msg>
-<msg timestamp="20210919 22:31:29.831" level="INFO">Firefox driver log is always forced to to: C:\Users\user\CodeTest\Automation\RESULTS\geckodriver-4.log</msg>
-<status status="PASS" starttime="20210919 22:31:29.828" endtime="20210919 22:31:37.372"/>
+<test id="s1-t4" name="GET Receive all registered users username - valid token">
+<kw name="Receive users Success" library="API_Common">
+<kw name="Get Users Info" library="API_Requests">
+<status status="PASS" starttime="20210924 00:01:55.595" endtime="20210924 00:01:55.609"/>
 </kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>index page</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210919 22:31:37.372" endtime="20210919 22:31:37.418"/>
+<kw name="Get Users Info Status" library="API_Requests">
+<var>${status_gui}</var>
+<msg timestamp="20210924 00:01:55.610" level="INFO">${status_gui} = SUCCESS</msg>
+<status status="PASS" starttime="20210924 00:01:55.610" endtime="20210924 00:01:55.610"/>
 </kw>
-<status status="PASS" starttime="20210919 22:31:29.827" endtime="20210919 22:31:37.418"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status_gui}</arg>
+<arg>${result_success}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 00:01:55.610" endtime="20210924 00:01:55.611"/>
 </kw>
-<kw name="Register with existing username" library="common">
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>xpath=/html/body/nav/ul/li[1]/a</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:37.425" level="INFO">Clicking link 'xpath=/html/body/nav/ul/li[1]/a'.</msg>
-<status status="PASS" starttime="20210919 22:31:37.418" endtime="20210919 22:31:37.550"/>
+<kw name="Get Users Info Usernames" library="API_Requests">
+<var>${usernames_gui}</var>
+<msg timestamp="20210924 00:01:55.611" level="INFO">${usernames_gui} = ['FQnBDZ502', 'QOxxyB277', 'QkATBy376', 'aBvjsE027', 'icAGNN320', 'kCiEBc512', 'xmVzng494']</msg>
+<status status="PASS" starttime="20210924 00:01:55.611" endtime="20210924 00:01:55.611"/>
 </kw>
-<kw name="Registered User" library="PrepareData">
-<status status="PASS" starttime="20210919 22:31:37.550" endtime="20210919 22:31:37.550"/>
+<kw name="Collect Registered Users Xlsx" library="PrepareData">
+<var>${usernames_xlsx}</var>
+<msg timestamp="20210924 00:01:55.612" level="INFO">${usernames_xlsx} = ['FQnBDZ502', 'kCiEBc512', 'QkATBy376', 'icAGNN320', 'xmVzng494', 'QOxxyB277', 'aBvjsE027']</msg>
+<status status="PASS" starttime="20210924 00:01:55.612" endtime="20210924 00:01:55.612"/>
 </kw>
-<kw name="Registered Username" library="PrepareData">
-<var>${username}</var>
-<msg timestamp="20210919 22:31:37.550" level="INFO">${username} = KJoybj190</msg>
-<status status="PASS" starttime="20210919 22:31:37.550" endtime="20210919 22:31:37.550"/>
+<kw name="Chceck Users Count Correct" library="API_Requests">
+<var>${data_correct}</var>
+<msg timestamp="20210924 00:01:55.613" level="INFO">['FQnBDZ502', 'kCiEBc512', 'QkATBy376', 'icAGNN320', 'xmVzng494', 'QOxxyB277', 'aBvjsE027']
+['FQnBDZ502', 'QOxxyB277', 'QkATBy376', 'aBvjsE027', 'icAGNN320', 'kCiEBc512', 'xmVzng494']</msg>
+<msg timestamp="20210924 00:01:55.613" level="INFO">${data_correct} = True</msg>
+<status status="PASS" starttime="20210924 00:01:55.612" endtime="20210924 00:01:55.613"/>
 </kw>
-<kw name="User Password" library="PrepareData">
-<var>${user_password}</var>
-<msg timestamp="20210919 22:31:37.550" level="INFO">${user_password} = Xf2A8a0c6X7</msg>
-<status status="PASS" starttime="20210919 22:31:37.550" endtime="20210919 22:31:37.550"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${data_correct}</arg>
+<arg>${string_true}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 00:01:55.613" endtime="20210924 00:01:55.613"/>
 </kw>
-<kw name="Registered First Name" library="PrepareData">
-<var>${first_name}</var>
-<msg timestamp="20210919 22:31:37.566" level="INFO">${first_name} = Amy</msg>
-<status status="PASS" starttime="20210919 22:31:37.566" endtime="20210919 22:31:37.566"/>
+<status status="PASS" starttime="20210924 00:01:55.595" endtime="20210924 00:01:55.614"/>
 </kw>
-<kw name="Registered Last Name" library="PrepareData">
-<var>${last_name}</var>
-<msg timestamp="20210919 22:31:37.566" level="INFO">${last_name} = Stein</msg>
-<status status="PASS" starttime="20210919 22:31:37.566" endtime="20210919 22:31:37.566"/>
-</kw>
-<kw name="Registered Phone Number" library="PrepareData">
-<var>${phone_number}</var>
-<msg timestamp="20210919 22:31:37.566" level="INFO">${phone_number} = +358 632939638</msg>
-<status status="PASS" starttime="20210919 22:31:37.566" endtime="20210919 22:31:37.566"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="username"]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:37.566" level="INFO">Typing text 'KJoybj190' into text field 'xpath=//*[@id="username"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:37.566" endtime="20210919 22:31:37.635"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="password"]</arg>
-<arg>${user_password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:37.635" level="INFO">Typing text 'Xf2A8a0c6X7' into text field 'xpath=//*[@id="password"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:37.635" endtime="20210919 22:31:37.674"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="firstname"]</arg>
-<arg>${first_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:37.674" level="INFO">Typing text 'Amy' into text field 'xpath=//*[@id="firstname"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:37.674" endtime="20210919 22:31:37.715"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="lastname"]</arg>
-<arg>${last_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:37.715" level="INFO">Typing text 'Stein' into text field 'xpath=//*[@id="lastname"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:37.715" endtime="20210919 22:31:37.754"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath=//*[@id="phone"]</arg>
-<arg>${phone_number}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:37.756" level="INFO">Typing text '+358 632939638' into text field 'xpath=//*[@id="phone"]'.</msg>
-<status status="PASS" starttime="20210919 22:31:37.754" endtime="20210919 22:31:37.786"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>xpath=/html/body/section/form/input[6]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210919 22:31:37.786" level="INFO">Clicking button 'xpath=/html/body/section/form/input[6]'.</msg>
-<status status="PASS" starttime="20210919 22:31:37.786" endtime="20210919 22:31:37.917"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>User ${username} is already registered.</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210919 22:31:37.917" endtime="20210919 22:31:37.933"/>
-</kw>
-<status status="PASS" starttime="20210919 22:31:37.418" endtime="20210919 22:31:37.933"/>
-</kw>
-<kw name="End Test" library="common">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210919 22:31:37.935" endtime="20210919 22:31:39.094"/>
-</kw>
-<status status="PASS" starttime="20210919 22:31:37.934" endtime="20210919 22:31:39.094"/>
-</kw>
-<doc>User registration with existing data in the system</doc>
-<status status="PASS" starttime="20210919 22:31:29.826" endtime="20210919 22:31:39.094"/>
+<status status="PASS" starttime="20210924 00:01:55.594" endtime="20210924 00:01:55.614"/>
 </test>
-<doc>Test Suite: Registration and log in with valid and invalid data</doc>
-<status status="PASS" starttime="20210919 22:30:58.428" endtime="20210919 22:31:39.106"/>
+<test id="s1-t5" name="GET Receive all registered usernames - invalid token">
+<kw name="Receive users Failure" library="API_Common">
+<kw name="Get Users Status Invalid" library="API_Requests">
+<var>${status_neg_gui}</var>
+<msg timestamp="20210924 00:01:55.620" level="INFO">${status_neg_gui} = FAILURE</msg>
+<status status="PASS" starttime="20210924 00:01:55.619" endtime="20210924 00:01:55.621"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status_neg_gui}</arg>
+<arg>${result_failed}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 00:01:55.621" endtime="20210924 00:01:55.622"/>
+</kw>
+<kw name="Get User Message Invalid" library="API_Requests">
+<var>${message_neg_gui}</var>
+<msg timestamp="20210924 00:01:55.623" level="INFO">${message_neg_gui} = Invalid Token</msg>
+<status status="PASS" starttime="20210924 00:01:55.622" endtime="20210924 00:01:55.623"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${message_neg_gui}</arg>
+<arg>${invalid_token}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 00:01:55.623" endtime="20210924 00:01:55.624"/>
+</kw>
+<status status="PASS" starttime="20210924 00:01:55.618" endtime="20210924 00:01:55.626"/>
+</kw>
+<status status="PASS" starttime="20210924 00:01:55.616" endtime="20210924 00:01:55.628"/>
+</test>
+<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
+<arg>Finished testing</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210924 00:01:55.631" endtime="20210924 00:01:55.632"/>
+</kw>
+<doc>Test Suite: Testing API with valid and invalid data</doc>
+<status status="PASS" starttime="20210924 00:01:53.790" endtime="20210924 00:01:55.633"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="Login Registration Test Suite Firefox">Login Registration Test Suite Firefox</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="API">API</stat>
 </suite>
 </statistics>
 <errors>
