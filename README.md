@@ -33,13 +33,13 @@ TESTS
    Login_Registration_Test_Suite_Firefox.robot  - robot test cases for UI.
    
 ### Test Case Execution
-####To execute the Login_Registration_Test_Suite_Firefox.robot file follow the below steps
- go to /CodeTest/Automation
-#### Execute command
- robot -d RESULTS\UI .\ROBOT_TESTS\Login_Registration_Test_Suite_Firefox.robot
-###To run the API.robot stay in the same folder and execute
- robot -d RESULTS\API .\ROBOT_TESTS\API.robot
-#### Test Results
+To execute the Login_Registration_Test_Suite_Firefox.robot file follow the below steps
+ * go to /CodeTest/Automation
+ Execute command
+* robot -d RESULTS\UI .\ROBOT_TESTS\Login_Registration_Test_Suite_Firefox.robot
+To run the API.robot stay in the same folder and execute
+* robot -d RESULTS\API .\ROBOT_TESTS\API.robot
+ Test Results
 * API tests:  /Automation/RESULTS/API
 * UI tests:  /Automation/RESULTS/UI
 
